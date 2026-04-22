@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDE Career Coach</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Agent Demo</p>
+          <h1>SDE Career Coach</h1>
+          <p class="sidebar-copy">
+            Practice salary negotiation, workplace communication, and high-stakes career conversations.
+          </p>
+        </div>
+
+        <section class="mode-panel">
+          <p class="panel-title">Modes</p>
+          <div class="mode-switch" role="tablist" aria-label="Agent mode">
+            <button id="coachModeButton" class="mode-button active" type="button">Career Coach</button>
+            <button id="evaluatorModeButton" class="mode-button" type="button">Evaluator</button>
+          </div>
+        </section>
+
+        <section id="coachScenarioPanel" class="scenario-panel">
+          <p class="panel-title">Quick Start Scenarios</p>
+          <button class="scenario-chip" data-prompt="I received an Amazon SDE intern offer and want to negotiate for a higher relocation stipend or sign-on bonus. Help me prepare a strong but professional response.">
+            Salary negotiation
+          </button>
+          <button class="scenario-chip" data-prompt="I need to email Professor Tim Chick to request a short deadline extension because multiple CMU deliverables piled up this week. Help me write a respectful message.">
+            Deadline extension
+          </button>
+          <button class="scenario-chip" data-prompt="A frontend engineer says my API response shape is too complex and refuses to integrate it. Help me prepare for a cross-team conversation that focuses on trade-offs, not blame.">
+            Cross-team conflict
+          </button>
+          <button class="scenario-chip" data-prompt="My manager said my progress is too slow during my internship. Role-play the conversation and coach me on how to respond professionally with an action plan.">
+            Negative feedback
+          </button>
+          <button class="scenario-chip" data-prompt="I am in the final week of my internship and want to ask for a full-time return offer. Help me turn my technical work into business impact for the conversation.">
+            Return offer
+          </button>
+        </section>
+
+        <section id="evaluatorPanel" class="scenario-panel hidden">
+          <p class="panel-title">Evaluator Instructions</p>
+          <div class="helper-card">
+            Paste a full transcript between the user and the career coach. The evaluator will score the assistant on five criteria and return an overall assessment.
+          </div>
+          <button id="loadEvaluatorTemplate" class="scenario-chip" type="button">
+            Insert transcript template
+          </button>
+        </section>
+      </aside>
+
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Conversation</p>
+            <h2 id="chatTitle">Career Negotiator & Communicator</h2>
+          </div>
+          <button id="resetButton" class="ghost-button" type="button">New chat</button>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="message-bubble">
+              Tell me the situation, your goal, and any constraints. I can help with strategy, wording, and pushback handling.
+            </div>
+          </article>
+        </div>
+
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="messageInput">Message</label>
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="1"
+            placeholder="Describe your situation..."
+            required
+          ></textarea>
+          <button id="sendButton" type="submit">Send</button>
+        </form>
+
+        <p id="statusText" class="status-text">No data is stored. Your current chat only lives in this browser tab.</p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
