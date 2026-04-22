@@ -1,0 +1,53 @@
+# --- Sensitive Data & Environment Variables ---
+# Never commit these files to GitHub!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# --- Dependencies ---
+node_modules/
+/jspm_packages/
+lib-cov/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# --- Build Outputs ---
+.next/
+out/
+build/
+dist/
+.cache/
+.serverless/
+
+# --- Logs ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# --- OS / IDE Specific Files ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# --- Testing ---
+coverage/
+.nyc_output/
+
+# --- Documentation (Optional) ---
+# Un-comment the line below if you don't want to push generated docs
+# docs/
